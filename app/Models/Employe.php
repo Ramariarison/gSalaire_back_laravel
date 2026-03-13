@@ -11,6 +11,8 @@ class Employe extends Model
         'salaire'
     ];
 
+    protected $appends = ['observation'];
+
     public function getObservationAttribute()
     {
         if ($this->salaire < 1000) {
