@@ -27,6 +27,14 @@ class EmployeController extends Controller
         ]);
     }
 
+    // Méthode pour récuperer un employé grace à son id
+    public function show($id)
+    {
+        $employe = Employe::findOrFail($id);
+
+        return response()->json($employe);
+    }
+
     // Méthode pour modifier un employé
     public function update(Request $request, $id)
     {
