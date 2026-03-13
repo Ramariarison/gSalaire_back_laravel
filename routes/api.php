@@ -1,8 +1,15 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+Route::get('/employes', [EmployeController::class, 'index']);
+
+Route::post('/employes', [EmployeController::class, 'show']);
+
+Route::get('/employe', [EmployeController::class, 'find']);
+
+Route::put('/employes/{id}', [EmployeController::class, 'update']);
+
+Route::delete('/employes/{id}', [EmployeController::class, 'delete']);
+
+Roure::get('/stats', [EmployeController::class, 'stats']);
