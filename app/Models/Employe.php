@@ -10,4 +10,17 @@ class Employe extends Model
         'nom',
         'salaire'
     ];
+
+    public function getObservationAttribute()
+    {
+        if ($this->salaire < 1000) {
+            return "mediocre";
+        }
+
+        if ($this->salaire <= 5000) {
+            return "moyen";
+        }
+
+        return "grand";
+    }
 }
