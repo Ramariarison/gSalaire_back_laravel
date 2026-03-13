@@ -4,12 +4,12 @@ use App\Http\Controllers\EmployeController;
 
 Route::get('/employes', [EmployeController::class, 'index']);
 
-Route::post('/employes', [EmployeController::class, 'show']);
+Route::post('/employes', [EmployeController::class, 'store']);
 
-Route::get('/employe', [EmployeController::class, 'find']);
+Route::get('/employes/{id}', [EmployeController::class, 'show']);
 
 Route::put('/employes/{id}', [EmployeController::class, 'update']);
 
 Route::delete('/employes/{id}', [EmployeController::class, 'delete']);
 
-Roure::get('/stats', [EmployeController::class, 'stats']);
+Route::get('/stats', [EmployeController::class, 'stats']);
