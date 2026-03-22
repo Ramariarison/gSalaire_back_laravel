@@ -10,7 +10,7 @@ class EmployeController extends Controller
     // Méthode pour récuperer tous les employés
     public function index()
     {
-        return response()->json(Employe::all());
+        return response()->json(Employe::orderBy('id', 'asc')->get());
     }
 
     // Méthode pour ajouter Employé
